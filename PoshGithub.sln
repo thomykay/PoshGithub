@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "PoshGithub", "PoshGithub\PoshGithub.pssproj", "{7D3EBB42-998B-40EE-95C2-09075F1A290E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D3EBB42-998B-40EE-95C2-09075F1A290E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D3EBB42-998B-40EE-95C2-09075F1A290E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D3EBB42-998B-40EE-95C2-09075F1A290E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D3EBB42-998B-40EE-95C2-09075F1A290E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
