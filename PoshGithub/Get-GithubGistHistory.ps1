@@ -1,0 +1,6 @@
+﻿function GetGithubGistHistory
+{
+    [CmdletBinding()]
+    param (
+    )
+}

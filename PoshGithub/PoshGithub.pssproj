@@ -14,7 +14,7 @@
     <Author>Thomas Krause</Author>
     <CmdletsToExport />
     <Description>Access github through their REST API</Description>
-    <FormatsToProcess />
+    <FormatsToProcess>PosGithub.Format.ps1xml</FormatsToProcess>
     <FunctionsToProcess />
     <Guid>00000000-0000-0000-0000-000000000000</Guid>
     <ModuleList />
@@ -24,7 +24,7 @@
     <RequiredAssemblies />
     <RequiredModules />
     <ScriptsToProcess />
-    <TypesToProcess />
+    <TypesToProcess>PosGithub.Types.ps1xml</TypesToProcess>
     <VarialesToExport />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -44,9 +44,40 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Compile Include="Script.ps1" />
+    <Compile Include="SharedScripts.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Remove-GithubGist.ps1">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Enter-GithubSession.ps1">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Get-GithubGist.ps1">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Get-GithubGistFiles.ps1">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Get-GithubGistHistory.ps1">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Get-GithubSession.ps1">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PoshGithub.Types.ps1xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PoshGithub.Format.ps1xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PoshGithub.psd1">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PoshGithub.psm1">
+      <SubType>Content</SubType>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />

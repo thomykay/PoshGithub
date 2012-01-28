@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--<Types xmlns="http://schemas.microsoft.com/PowerShell/TypeData/2007/04">-->
+<Types>
+  <Type>
+    <Name>ThomyKay.PoshGithub.Gist</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>CreatedDate</Name>
+        <GetScriptBlock>
+          [DateTime]::Parse($this.created_at)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>UpdatedDate</Name>
+        <GetScriptBlock>
+          [DateTime]::Parse($this.updated_at)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>IsPublic</Name>
+        <ReferencedMemberName>public</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>UserName</Name>
+        <GetScriptBlock>
+          $this.user.login
+        </GetScriptBlock>
+      </ScriptProperty>
+      <PropertySet>
+        <Name>DefaultDisplayPropertySet</Name>
+        <ReferencedProperties>
+          <Name>url</Name>
+          <Name>description</Name>
+          <Name>UserName</Name>
+          <Name>CreatedDate</Name>
+          <Name>UpdatedDate</Name>
+        </ReferencedProperties>
+      </PropertySet>
+    </Members>
+  </Type>
+</Types>

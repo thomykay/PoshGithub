@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "PoshGithub", "PoshGithub\PoshGithub.pssproj", "{7D3EBB42-998B-40EE-95C2-09075F1A290E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B051A9AD-939B-4BB2-BEE9-A703AE27AE15}"
+	ProjectSection(SolutionItems) = preProject
+		PoshGithub.psm1 = PoshGithub.psm1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
