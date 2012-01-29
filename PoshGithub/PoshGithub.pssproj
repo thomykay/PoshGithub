@@ -48,6 +48,12 @@
     <Compile Include="SharedScripts.ps1" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Invoke-GithubItem.ps1">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="New-GithubGist.ps1">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Remove-GithubGist.ps1">
       <SubType>Content</SubType>
     </Content>

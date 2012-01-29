@@ -1,31 +1,38 @@
 function Get-GithubGist
 {
-    [CmdletBinding()]
+    [CmdletBinding(DefaultParameterSetName="Default")]
     param (
 		[Parameter(Mandatory=$false, Position = 0)]
 		[string]$Description = "*",
 		
-        [Parameter(Mandatory = $false)]
+        [Parameter(Mandatory = $true, ParameterSetName="User")]
         [string]$UserName,
+
+        [Parameter(Mandatory=$true, ParameterSetName="All")]
+        [switch]$All,
+
+        [Parameter(Mandatory=$true, ParameterSetName="Starred")]
+        [switch]$Starred,
+
+        [Parameter(Mandatory=$true, ParameterSetName="Id")]
+        [int]$Id,
 
         [Parameter(Mandatory = $false)]
         $Session = (Get-GithubSession -Current)
     )
 begin
 {    
-	if ($psBoundParameters.ContainsKey('UserName'))
-	{
-		$uri = GetUri "/users/$UserName/gists"
-	}
-	else
-	{
-		$uri = GetUri "/gists/public"
-	}
-
+    switch ($psCmdlet.ParameterSetName)
+    {
+        "User"    {$uri = GetUri "/users/$UserName/gists"}
+        "All"     {$uri = GetUri "/gists/public"}
+        "Starred" {$uri = GetUri "/gists/starred"}
+        "Id"      {$uri = GetUri "gists/$Id"}
+        "Default" {$uri = GetUri "/gists"}
+    }
 }
 process
 {
-	Write-Verbose "Request from $uri"
     Invoke-RestMethod -Uri $uri -Credential $Session `
 		| ConvertTo-Enumerable `
 		<#| Where-Object {$_.description -Like $Description}#> `

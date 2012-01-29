@@ -16,7 +16,7 @@ process
 {
     if ($psCmdlet.ShouldProcess("Delete Gist", $Gist.Description))
     {
-        Invoke-RestMethod -Uri (GetUri "/gists/${Gist.id}") -Method Delete -Credential $Session
+        Invoke-RestMethod -Uri (GetUri "/gists/$($Gist.id)") -Method Delete -Credential $Session
     }
 }
 end

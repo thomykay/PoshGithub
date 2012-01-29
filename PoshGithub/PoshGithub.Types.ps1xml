@@ -1,9 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!--<Types xmlns="http://schemas.microsoft.com/PowerShell/TypeData/2007/04">-->
-<Types>
+<Types xmlns="http://schemas.microsoft.com/PowerShell/TypeData/2007/04">
+<!--<Types>-->
   <Type>
     <Name>ThomyKay.PoshGithub.Gist</Name>
     <Members>
+      <AliasProperty>
+        <Name>Name</Name>
+        <ReferencedMemberName>description</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Uri</Name>
+        <ReferencedMemberName>url</ReferencedMemberName>
+      </AliasProperty>
       <ScriptProperty>
         <Name>CreatedDate</Name>
         <GetScriptBlock>
@@ -26,16 +34,45 @@
           $this.user.login
         </GetScriptBlock>
       </ScriptProperty>
-      <PropertySet>
-        <Name>DefaultDisplayPropertySet</Name>
-        <ReferencedProperties>
-          <Name>url</Name>
-          <Name>description</Name>
-          <Name>UserName</Name>
-          <Name>CreatedDate</Name>
-          <Name>UpdatedDate</Name>
-        </ReferencedProperties>
-      </PropertySet>
+      <MemberSet>
+        <Name>PSStandardMembers</Name>
+        <Members>
+          <PropertySet>
+            <Name>DefaultDisplayPropertySet</Name>
+            <ReferencedProperties>
+              <Name>Name</Name>
+              <Name>UserName</Name>
+              <Name>UpdatedDate</Name>
+            </ReferencedProperties>
+          </PropertySet>
+          <PropertySet>
+            <Name>DefaultKeyPropertySet</Name>
+            <ReferencedProperties>
+              <Name>id</Name>
+            </ReferencedProperties>
+          </PropertySet>
+          <NoteProperty>
+            <Name>DefaultDisplayProperty</Name>
+            <Value>description</Value>
+          </NoteProperty>
+        </Members>
+      </MemberSet>      
+    </Members>
+  </Type>
+  <Type>
+    <Name>ThomyKay.PoshGithub.GistHistory</Name>
+    <Members>
+      <MemberSet>
+        <Name>PSStandardMembers</Name>
+        <Members>
+          <PropertySet>
+            <Name>DefaultDisplayPropertySet</Name>
+            <ReferencedProperties>
+              <Name>filename</Name>
+            </ReferencedProperties>
+          </PropertySet>
+        </Members>
+      </MemberSet>
     </Members>
   </Type>
 </Types>
